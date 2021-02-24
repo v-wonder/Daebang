@@ -140,37 +140,38 @@
             </footer>
         </div>
     </div>
+    
+    <script>
+        $(window).scroll(function(){
+            var st = $(window).scrollTop();
+            var bh = $(window).height();
+
+            $('.move.left').each(function(){
+                    var $this = $(this);
+                    var my_st = $this.offset().top - (bh * 0.1);
+
+                    if(st > my_st){
+                            $this.addClass('active');
+                    }
+            });
+
+            $('.move.right').each(function(){
+                    var $this = $(this);
+                    var my_st = $this.offset().top - (bh * 0.1);
+
+                    if(st > my_st){
+                            $this.addClass('active');
+                    }
+            });
+            $('.move').each(function(){
+                    var $this = $(this);
+                    var my_st = $this.offset().top - (bh * 0.1);
+
+                    if(st > my_st){
+                            $this.addClass('active');
+                    }
+            });
+        });
+    </script>
 </body>
-<script>
-    $(window).scroll(function(){
-        var st = $(window).scrollTop();
-        var bh = $(window).height();
-
-        $('.move.left').each(function(){
-                var $this = $(this);
-                var my_st = $this.offset().top - (bh * 0.1);
-
-                if(st > my_st){
-                        $this.addClass('active');
-                }
-        });
-
-        $('.move.right').each(function(){
-                var $this = $(this);
-                var my_st = $this.offset().top - (bh * 0.1);
-
-                if(st > my_st){
-                        $this.addClass('active');
-                }
-        });
-        $('.move').each(function(){
-                var $this = $(this);
-                var my_st = $this.offset().top - (bh * 0.1);
-
-                if(st > my_st){
-                        $this.addClass('active');
-                }
-        });
-    });
-</script>
 </html>
